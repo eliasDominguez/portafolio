@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portafolio | Elías Domínguez</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: #ffffff;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header {
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: inherit;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    /* Contenedor para la imagen y el nombre */
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      /* espacio entre imagen y texto */
+    }
+
+    .avatar {
+      width: 40px;
+      /* tamaño pequeño */
+      height: 40px;
+      border-radius: 50%;
+      /* bordes redondeados completos */
+      object-fit: cover;
+      /* para que la imagen mantenga proporción y se recorte bien */
+      border: 2px solid var(--primary);
+      /* opcional: borde de color principal */
+    }
+
+
+    header h1 {
+      font-size: 24px;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #007aff;
+    }
+
+    .hero {
+      padding: 100px 40px 60px;
+      text-align: center;
+      background: #f9f9f9;
+    }
+
+    .hero h2 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .hero a {
+      display: inline-block;
+      padding: 12px 30px;
+      background: #007aff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .hero a:hover {
+      background: #005fd1;
+    }
+
+    .section {
+      padding: 80px 40px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section h3 {
+      font-size: 28px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .section p {
+      text-align: center;
+      max-width: 700px;
+      margin: auto;
+      color: #555;
+    }
+
+    .technologies {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 30px;
+      font-size: 18px;
+    }
+
+    .technologies span {
+      background: #f0f0f0;
+      padding: 10px 20px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .projects {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      margin-top: 30px;
+      align-items: center;
+    }
+
+    .project {
+      border: 1px solid #eee;
+      border-radius: 10px;
+      padding: 20px;
+      background: #fff;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact a {
+      color: #007aff;
+      text-decoration: none;
+    }
+
+    .cv-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 25px;
+      background: #222;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .cv-btn:hover {
+      background: #444;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      background: #f9f9f9;
+      color: #888;
+    }
+
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 28px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      nav a {
+        margin-left: 10px;
+        font-size: 14px;
+      }
+    }
+    header {
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  flex-wrap: nowrap;
+}
+
+/* Contenedor imagen + nombre */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Imagen avatar */
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Botón hamburguesa */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    z-index: 1001;
+  }
+
+  nav a {
+    margin: 10px 0;
+  }
+
+  .show-menu {
+    display: flex !important;
+  }
+
+  /* Asegurar que header esté alineado horizontalmente */
+  header {
+    flex-wrap: nowrap;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+  <div class="header-left">
+    <img src="./img/Avatar_Elias.png" alt="Avatar Elías Domínguez" class="avatar" />
+    <h1>Elías Domínguez</h1>
+  </div>
+
+  <!-- Botón hamburguesa -->
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+  <nav id="nav">
+    <a href="#sobre">Sobre mí</a>
+    <a href="#tecnologias">Tecnologías</a>
+    <a href="#experiencia">Experiencia</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+
+  <section class="hero" data-aos="fade-up">
+    <img src="./img/Avatar_Elias.png" alt="Elías Domínguez" style="width: 80px; border-radius: 50%; margin-bottom: 20px;" />
+    <h2>Hola, soy Elías Domínguez</h2>
+    <p>Apasionado por el backend, la automatización y las soluciones web.</p>
+    <a href="#experiencia">Ver experiencia</a>
+  </section>
+
+
+  <section id="sobre" class="section">
+    <h3>📌 Sobre mí</h3>
+    <p>
+      Programador con años de experiencia en desarrollo de aplicaciones web. Enfocado principalmente en el backend utilizando .NET Core, SQL Server y herramientas de automatización. Actualmente trabajo en <strong> <a href="https://snakeroads.com/" target="_blank"> Snakeroads</a></strong> desarrollando soluciones empresariales.
+    </p>
+  </section>
+
+  <section id="tecnologias" class="section">
+    <h3>🛠️ Tecnologías</h3>
+    <div class="technologies">
+      <span>🗄️ SQL Server</span>
+      <span>⚙️ .NET Core</span>
+      <span>🧩 Angular</span>
+      <span>✨ JavaScript</span>
+      <span>🔄 Power Automate</span>
+      <!-- <span>📊 Power BI</span> -->
+    </div>
+  </section>
+
+  <section id="experiencia" class="section">
+    <h3>💼 Experiencia</h3>
+    <div class="projects">
+      <div class="project">
+        <h4>Snakeroads</h4>
+        <p>Desarrollador backend. Desarrollo de APIs, automatización de procesos con Power Automate, mantenimiento de sistemas internos.</p>
+      </div>
+      <div class="project">
+        <h4>Grupo Advisers</h4>
+        <p>Desarrollador. Apoyo en proyectos administrativos, desarrollo de herramientas internas, optimización de procesos.</p>
+      </div>
+      <div class="project">
+        <h4>Universidad Latina</h4>
+        <p>Desarrollador de sistemas académicos. Automatización de reportes y gestión de datos institucionales.</p>
+      </div>
+    </div>
+    <div style="text-align: center;">
+      <a class="cv-btn" href="./files/Hoja de Vida.pdf" download>📄 Descargar CV</a>
+    </div>
+  </section>
+
+  <section id="contacto" class="section contact">
+    <h3>📬 Contacto</h3>
+    <p>Escríbeme a: <a href="mailto:eliasmdominguez@gmail.com">eliasmdominguez@gmail.com</a></p>
+    <p>También puedes contactarme por:</p>
+    <p>
+      <a href="https://github.com/eliasDominguez" target="_blank">GitHub</a> |
+      <a href="https://linkedin.com/in/elias-dominguez-castrejon" target="_blank">LinkedIn</a> |
+      <a href="https://www.instagram.com/eliasdominguezdev" target="_blank">Instagram</a>
+    </p>
+  </section>
+
+  <footer>
+    &copy; 2025 Elías Domínguez. Todos los derechos reservados.
+  </footer>
+
+</body>
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById("nav");
+    nav.classList.toggle("show-menu");
+  }
+</script>
+
+</html>
